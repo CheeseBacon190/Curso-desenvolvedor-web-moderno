@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Slider</title>
+</head>
+<body>
+    <p id="slider">
+    
+    </p>
+    <button>Proximo</button>
+</body>
+<script>
+    const mover = (elem, inicio, fim, passo, callback) => {
+        const novoInicio = inicio - passo
+        
+        if(novoInicio >= fim){
+            elem.style.left = novoInicio + 'px'
+            setTimeout(() => mover(elem, inicio, fim, passo, callback), 7)
+
+        } else{
+            callback()
+        }
+      
+    }
+    
+    
+</script>
+</html>

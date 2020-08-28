@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios HTML</title>
+    <style>
+        header
+        {
+            text-align: center;
+        }
+
+        #conteudo
+        {
+            padding: 30px 0px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Exercicios HTML</h1>
+    </header>
+    <hr>
+
+    <nav>
+        <a href="exercicios/teste.html">00 - teste</a>           |
+        <a href="exercicios/texto1.html">01 - Tag de texto 1</a> |
+        <a href="exercicios/texto2.html">02 - Tag de texto 2</a> |
+        <a href="exercicios/listas.html">03 - Listas</a>         |
+        <a href="exercicios/listasAninhadas.html">04 - Listas Aninhadas</a> |
+        <a href="exercicios/links.html">05 - Links</a> |
+        <a href="exercicios/tabela.html">06 - Tabelas</a> |
+        <a href="exercicios/form/formularios1.html">07 - Formulários 1</a> |
+        <a href="exercicios/imagens/imagens.html">08 - Imagens</a> |
+        <a href="exercicios/videos.html">09 - Videos</a> |
+    </nav>
+    <hr>
+
+    <section id="conteudo"></section>
+    <hr>
+
+    <footer>
+        Curso de WEB
+    </footer>
+    <hr>
+    
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            const conteudo = document.getElementById('conteudo')
+
+            link.onclick = evento => {
+                evento.preventDefault()
+                fetch(link.href)
+                    .then(resposta => resposta.text())
+                    .then(html => conteudo.innerHTML = html)
+            }
+        })
+    </script>
+
+</body>
+</html>
